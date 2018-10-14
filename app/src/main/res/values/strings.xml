@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ProyectoTesis</string>
+
+    ///LOGIN ACTIVITY
+    <string name="UsuarioLogin">Usuario</string>
+    <string name="ContrasenaLogin">Contraseña</string>
+    <string name="Registro">Registrar</string>
+
+    //Registro Activity
+    <string name="NombreRegistro">Nombre:</string>
+    <string name="ApellidoRegistro">Apellido:</string>
+    <string name="CorreoRegistro">Correo:</string>
+    <string name="ContrasenaRegistro">Contraseña:</string>
+    <string name="ContrasenaRegistro2">Repetir Contraseña:</string>
+
+</resources>
