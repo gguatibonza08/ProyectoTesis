@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav1"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:title="222" />
+        <item
+            android:id="@+id/nav2"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="afsafa" />
+        <item
+            android:id="@+id/nav3"
+            android:icon="@drawable/ic_lock_black_24dp"
+            android:title="fgadg" />
+    </group>
+</menu>

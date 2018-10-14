@@ -8,7 +8,6 @@
 
 
 
-
     <android.support.design.bottomappbar.BottomAppBar
         android:id="@+id/ApBarHome"
         style="@style/Widget.MaterialComponents.BottomAppBar"
@@ -16,9 +15,9 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"
         android:backgroundTint="@color/colorPrimary"
-        app:fabAlignmentMode="end"
-        app:hideOnScroll="true"
+        app:fabAlignmentMode="center"
         app:fabCradleRoundedCornerRadius="15dp"
+        app:hideOnScroll="true"
         app:navigationIcon="@drawable/ic_menu_black_24dp" />
 
     <android.support.design.widget.FloatingActionButton
