@@ -6,11 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".RegistroActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gachas" />
+
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
-        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardBackgroundColor="@color/dartOpac"
         app:contentPadding="4dp">
 
         <LinearLayout

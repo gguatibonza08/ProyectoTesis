@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/fondo" />
+        android:src="@drawable/panachi" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/CardLogin"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="-24dp"
+            android:layout_marginTop="-30dp"
             app:borderWidth="2dp"
             app:fabSize="normal"
             app:rippleColor="@color/colorPrimary"
@@ -110,7 +110,6 @@
         android:layout_margin="10dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:fontFamily="sans-serif"
-        android:onClick="irRegistro"
         android:text="@string/Registro"
         android:textColor="@color/ligth"
         android:textStyle="bold" />
