@@ -12,5 +12,10 @@
     <string name="CorreoRegistro">Correo:</string>
     <string name="ContrasenaRegistro">Contraseña:</string>
     <string name="ContrasenaRegistro2">Repetir Contraseña:</string>
+    <string name="ApodoUsuario">Apodo:</string>
+    <string name="TelefonoUsuario">Teléfono:</string>
+    <string name="AvatarUno">Avatar 1</string>
+    <string name="AvatarDos">Avatar 2</string>
+    <string name="AvatarTres">Avatar 3</string>
 
 </resources>
