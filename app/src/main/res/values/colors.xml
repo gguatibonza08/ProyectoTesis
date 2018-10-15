@@ -9,4 +9,5 @@
 
     <color name="dartOpac">#66000000</color>
     <color name="ligthOpac">#CCffffff</color>
+    <color name="divider">#c3c5c9</color>
 </resources>
