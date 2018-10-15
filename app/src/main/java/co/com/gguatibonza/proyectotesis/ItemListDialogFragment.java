@@ -45,6 +45,7 @@ public class ItemListDialogFragment extends BottomSheetDialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
+
     }
 
     @Override

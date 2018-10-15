@@ -25,16 +25,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/degradado"
+                android:elevation="4dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="5dp"
                 android:weightSum="1">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="0dp"
                     android:layout_height="70dp"
+                    android:layout_margin="4dp"
                     android:layout_weight=".3"
-                    android:src="@drawable/backpacker" />
+                    android:elevation="6dp"
+                    android:src="@drawable/backpacker"
+                    app:civ_border_color="@color/dark"
+                    app:civ_border_overlay="true"
+                    app:civ_border_width="2px"
+                    app:civ_circle_background_color="@color/ligthOpac" />
+
 
                 <RelativeLayout
                     android:layout_width="0dp"
@@ -83,6 +91,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/municipiosBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
@@ -106,6 +115,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/rutasBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
@@ -130,6 +140,7 @@
 
 
             <LinearLayout
+                android:id="@+id/perfilBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
@@ -174,8 +185,8 @@
 
             </LinearLayout>
 
-
             <LinearLayout
+                android:id="@+id/contactanosBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
@@ -198,8 +209,8 @@
 
             </LinearLayout>
 
-
             <LinearLayout
+                android:id="@+id/evaluanosBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
@@ -222,8 +233,8 @@
 
             </LinearLayout>
 
-
             <LinearLayout
+                android:id="@+id/acercadeBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
@@ -245,6 +256,12 @@
                     android:text="Acerca De" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="5dp"
+                android:background="#e8eaef"></LinearLayout>
 
         </LinearLayout>
 
