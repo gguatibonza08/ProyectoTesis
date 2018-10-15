@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".homeActivity">
 
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize"></FrameLayout>
 
     <android.support.design.bottomappbar.BottomAppBar
         android:id="@+id/ApBarHome"
@@ -16,7 +19,8 @@
         android:layout_gravity="bottom"
         android:backgroundTint="@color/colorPrimary"
         app:fabAlignmentMode="center"
-        app:fabCradleRoundedCornerRadius="15dp"
+        app:fabCradleMargin="8dp"
+        app:fabCradleRoundedCornerRadius="8dp"
         app:hideOnScroll="true"
         app:navigationIcon="@drawable/ic_menu_black_24dp" />
 
