@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="none">
+    <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav1"
+            android:id="@+id/municipioMenu"
             android:icon="@drawable/ic_email_black_24dp"
-            android:title="222" />
+            android:title="Municipios" />
         <item
-            android:id="@+id/nav2"
+            android:id="@+id/rutaMenu"
             android:icon="@drawable/ic_account_circle_black_24dp"
-            android:title="afsafa" />
+            android:title="Rutas" />
         <item
-            android:id="@+id/nav3"
+            android:id="@+id/perfilMenu"
             android:icon="@drawable/ic_lock_black_24dp"
-            android:title="fgadg" />
+            android:title="Perfil" />
     </group>
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/contactanosMenu"
+                android:icon="@drawable/ic_email_black_24dp"
+                android:title="Contactacnos" />
+            <item
+                android:id="@+id/calificanosMenu"
+                android:icon="@drawable/ic_lock_black_24dp"
+                android:title="Evaluanos" />
+            <item
+                android:id="@+id/acercaDeMenu"
+                android:icon="@drawable/ic_lock_black_24dp"
+                android:title="Acerca de" />
+        </menu>
+    </item>
 </menu>

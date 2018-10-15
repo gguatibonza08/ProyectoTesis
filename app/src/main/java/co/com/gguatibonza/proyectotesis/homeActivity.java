@@ -5,8 +5,9 @@ import android.support.design.bottomappbar.BottomAppBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
-public class homeActivity extends AppCompatActivity implements ItemListDialogFragment.Listener {
+public class homeActivity extends AppCompatActivity implements enviarMenu {
     private BottomAppBar appBar;
 
     @Override
@@ -18,7 +19,8 @@ public class homeActivity extends AppCompatActivity implements ItemListDialogFra
         appBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ItemListDialogFragment.newInstance(30).show(getSupportFragmentManager(), "dialog");
+                //ItemListDialogFragment.newInstance(30).show(getSupportFragmentManager(), "dialog");
+                menuBottomSheet.newInstance().show(getSupportFragmentManager(), "dialog");
             }
         });
     }
@@ -29,8 +31,9 @@ public class homeActivity extends AppCompatActivity implements ItemListDialogFra
         return true;
     }
 
-    @Override
-    public void onItemClicked(int position) {
 
+    @Override
+    public void enviarMenu(int i) {
+        Toast.makeText(getApplicationContext(), "" + i, Toast.LENGTH_SHORT).show();
     }
 }
