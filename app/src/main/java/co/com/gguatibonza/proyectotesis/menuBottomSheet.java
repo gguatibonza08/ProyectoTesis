@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import co.com.gguatibonza.proyectotesis.interfaces.enviarMenu;
+
 /**
  * <p>A fragment that shows a list of items as a modal bottom sheet.</p>
  * <p>You can show this modal bottom sheet from your activity like this:</p>
@@ -22,7 +24,7 @@ import android.view.ViewGroup;
 public class menuBottomSheet extends BottomSheetDialogFragment {
 
 
-    private enviarMenu enviarMenu;
+    private co.com.gguatibonza.proyectotesis.interfaces.enviarMenu enviarMenu;
 
     // TODO: Customize parameters
     public static menuBottomSheet newInstance() {
@@ -37,7 +39,7 @@ public class menuBottomSheet extends BottomSheetDialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.menuBottomSheet, container, false);
+        return inflater.inflate(R.layout.menu_bottom_sheet, container, false);
     }
 
     @Override
@@ -48,7 +50,7 @@ public class menuBottomSheet extends BottomSheetDialogFragment {
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         final NavigationView navigationView = view.findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
