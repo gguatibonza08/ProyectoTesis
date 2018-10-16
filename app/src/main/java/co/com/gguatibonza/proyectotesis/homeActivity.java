@@ -3,6 +3,7 @@ package co.com.gguatibonza.proyectotesis;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.bottomappbar.BottomAppBar;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -25,6 +26,7 @@ public class homeActivity extends AppCompatActivity
         evaluarFragment.OnFragmentInteractionListener,
         acercaFragment.OnFragmentInteractionListener {
 
+    private FloatingActionButton fab;
     private BottomAppBar appBar;
     private municipioFragment municipioFragment;
     private rutaFragment rutaFragment;
@@ -41,6 +43,7 @@ public class homeActivity extends AppCompatActivity
         appBar = findViewById(R.id.ApBarHome);
         setSupportActionBar(appBar);
         getSupportFragmentManager().beginTransaction().add(R.id.fragmentHome, municipioFragment).commit();
+
 
         appBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +73,7 @@ public class homeActivity extends AppCompatActivity
     public void enviarMenu(int i) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_right);
-       // transaction.addToBackStack(null);
+        // transaction.addToBackStack(null);
 
         switch (i) {
             case R.id.municipioMenu:

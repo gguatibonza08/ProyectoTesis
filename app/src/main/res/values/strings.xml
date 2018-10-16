@@ -15,5 +15,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="descripcionMunicipio">capital del departamento de Santander. Declarada según el Banco Mundial en su estudio de ciudades competitivas para estudios y crecimientos como la ciudad más próspera de América Latina y ejemplo para el mundo.</string>
+    <string name="municipioNameItem">Bucaramanga</string>
 
 </resources>
