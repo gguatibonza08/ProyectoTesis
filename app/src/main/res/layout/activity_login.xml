@@ -50,6 +50,7 @@
                     app:hintEnabled="true">
 
                     <android.support.design.widget.TextInputEditText
+                        android:id="@+id/correoLogin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_account_circle_black_24dp"
@@ -70,6 +71,7 @@
                     app:passwordToggleEnabled="true">
 
                     <android.support.design.widget.TextInputEditText
+                        android:id="@+id/contrasenaLogin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_lock_black_24dp"

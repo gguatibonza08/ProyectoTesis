@@ -3,7 +3,12 @@ package co.com.gguatibonza.proyectotesis.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class municipio implements Serializable {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class municipio extends RealmObject implements Serializable {
+
+    @PrimaryKey
     private String nombre;
     private String descripcionBasica;
     private String descripcionCompleta;

@@ -14,7 +14,6 @@ import android.view.View;
 import co.com.gguatibonza.proyectotesis.fragments.acercaFragment;
 import co.com.gguatibonza.proyectotesis.fragments.contactarFragment;
 import co.com.gguatibonza.proyectotesis.fragments.evaluarFragment;
-import co.com.gguatibonza.proyectotesis.fragments.municipioDetailFragment;
 import co.com.gguatibonza.proyectotesis.fragments.municipioFragment;
 import co.com.gguatibonza.proyectotesis.fragments.perfilFragment;
 import co.com.gguatibonza.proyectotesis.fragments.rutaFragment;
