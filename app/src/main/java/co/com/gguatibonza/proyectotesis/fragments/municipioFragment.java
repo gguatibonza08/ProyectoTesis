@@ -24,7 +24,7 @@ public class municipioFragment extends android.support.v4.app.Fragment {
 
     private OnFragmentInteractionListener mListener;
     private RecyclerView listMunicipios;
-    private ArrayList<municipio> nombres = new ArrayList<>();
+    private ArrayList<municipio> nombres;
 
     public municipioFragment() {
 
@@ -68,6 +68,7 @@ public class municipioFragment extends android.support.v4.app.Fragment {
     }
 
     private void ayuda() {
+        nombres = new ArrayList<>();
         nombres.add(new municipio("Bucaramanga", "https://files.rcnradio.com/public/migration/212.jpg", getString(R.string.descripcionMunicipio)));
         nombres.add(new municipio("El PLayón", "https://files.rcnradio.com/public/migration/playon.jpg", getString(R.string.descripcionMunicipio)));
         nombres.add(new municipio("Veléz", "https://i.ytimg.com/vi/Q1VLPaEDcUs/maxresdefault.jpg", getString(R.string.descripcionMunicipio)));

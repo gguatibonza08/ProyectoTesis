@@ -2,21 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/app_bar_fav"
-        android:icon="@drawable/ic_menu_black_24dp"
-        android:title="prueba"
-        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/app_bar_search"
-        android:icon="@drawable/ic_account_circle_black_24dp"
-        android:title="prueba2"
+        android:id="@+id/profileBottom"
+        android:icon="@drawable/ic_account_yellow"
+        android:title="Perfil"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/app_bar_settings"
-        android:icon="@drawable/ic_email_black_24dp"
-        android:title="prueba3"
-        app:showAsAction="never" />
+        android:id="@+id/closeBottom"
+        android:icon="@drawable/ic_close"
+        android:title="Log-Out"
+        app:showAsAction="ifRoom" />
 
 </menu>

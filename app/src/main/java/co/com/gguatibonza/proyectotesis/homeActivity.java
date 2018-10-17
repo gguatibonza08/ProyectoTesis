@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import co.com.gguatibonza.proyectotesis.fragments.acercaFragment;
@@ -70,10 +71,27 @@ public class homeActivity extends AppCompatActivity
 
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_right);
+
+        switch (item.getItemId()) {
+            case R.id.profileBottom:
+                transaction.replace(R.id.fragmentHome, perfilFragment).commit();
+                break;
+            case R.id.closeBottom:
+                finish();
+                break;
+
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void enviarMenu(int i) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_right);
-        // transaction.addToBackStack(null);
 
         switch (i) {
             case R.id.municipioMenu:
