@@ -1,8 +1,11 @@
 package co.com.gguatibonza.proyectotesis.interfaces;
 
-import android.content.Context;
+
+import co.com.gguatibonza.proyectotesis.model.municipio;
 
 public interface enviarMenu {
 
     void enviarMenu(int i);
+
+    void enviarMunicipio(municipio municipio);
 }

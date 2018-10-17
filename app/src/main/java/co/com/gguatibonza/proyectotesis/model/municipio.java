@@ -1,14 +1,20 @@
 package co.com.gguatibonza.proyectotesis.model;
 
-public class municipio {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class municipio implements Serializable {
     private String nombre;
-    private String descripcion;
+    private String descripcionBasica;
+    private String descripcionCompleta;
+    private ArrayList<String> simbolos;
     private String foto;
 
-
-    public municipio(String nombre, String foto, String descripcion) {
+    public municipio(String nombre, String descripcionBasica, String descripcionCompleta, ArrayList<String> simbolos, String foto) {
         this.nombre = nombre;
-        this.descripcion = descripcion;
+        this.descripcionBasica = descripcionBasica;
+        this.descripcionCompleta = descripcionCompleta;
+        this.simbolos = simbolos;
         this.foto = foto;
     }
 
@@ -20,12 +26,28 @@ public class municipio {
         this.nombre = nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescripcionBasica() {
+        return descripcionBasica;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescripcionBasica(String descripcionBasica) {
+        this.descripcionBasica = descripcionBasica;
+    }
+
+    public String getDescripcionCompleta() {
+        return descripcionCompleta;
+    }
+
+    public void setDescripcionCompleta(String descripcionCompleta) {
+        this.descripcionCompleta = descripcionCompleta;
+    }
+
+    public ArrayList<String> getSimbolos() {
+        return simbolos;
+    }
+
+    public void setSimbolos(ArrayList<String> simbolos) {
+        this.simbolos = simbolos;
     }
 
     public String getFoto() {

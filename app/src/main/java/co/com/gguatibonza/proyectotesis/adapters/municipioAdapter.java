@@ -17,13 +17,16 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import co.com.gguatibonza.proyectotesis.R;
+import co.com.gguatibonza.proyectotesis.interfaces.enviarMenu;
 import co.com.gguatibonza.proyectotesis.model.municipio;
 
-public class municipioAdapter extends RecyclerView.Adapter<municipioAdapter.ViewHolder> {
+public class municipioAdapter extends RecyclerView.Adapter<municipioAdapter.ViewHolder> implements View.OnClickListener {
 
     private Context context;
     private static int lastpostion = -1;
     private ArrayList<municipio> listaMunicipios;
+    private View.OnClickListener listener;
+    private enviarMenu enviar;
 
     public municipioAdapter(Context context, ArrayList<municipio> listaMunicipios) {
         this.context = context;
@@ -34,13 +37,14 @@ public class municipioAdapter extends RecyclerView.Adapter<municipioAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.municipio_item, null, false);
+        view.setOnClickListener(this);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.nombreMunicipio.setText(listaMunicipios.get(i).getNombre());
-        viewHolder.descriptionMunicipio.setText(listaMunicipios.get(i).getDescripcion());
+        viewHolder.descriptionMunicipio.setText(listaMunicipios.get(i).getDescripcionBasica());
         Picasso.get().load(listaMunicipios.get(i).getFoto()).into(viewHolder.imagenMunicipio);
         setAnimation(viewHolder.cardItem, i);
 
@@ -49,6 +53,18 @@ public class municipioAdapter extends RecyclerView.Adapter<municipioAdapter.View
     @Override
     public int getItemCount() {
         return listaMunicipios.size();
+    }
+
+
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener != null) {
+            listener.onClick(v);
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
