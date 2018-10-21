@@ -1,7 +1,6 @@
 package co.com.gguatibonza.proyectotesis;
 
 import android.content.Context;
-import co.com.gguatibonza.proyectotesis.interfaces.enviarMenu;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,25 +11,29 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 
-/**
- * <p>A fragment that shows a list of items as a modal bottom sheet.</p>
- * <p>You can show this modal bottom sheet from your activity like this:</p>
- * <pre>
- *     menuBottomSheet.newInstance(30).show(getSupportFragmentManager(), "dialog");
- * </pre>
- */
+import co.com.gguatibonza.proyectotesis.interfaces.enviarMenu;
+import co.com.gguatibonza.proyectotesis.model.Usuario;
+import co.com.gguatibonza.proyectotesis.model.auxiliar;
+import de.hdodenhof.circleimageview.CircleImageView;
+import io.realm.Realm;
+
 public class menuBottomSheet extends BottomSheetDialogFragment {
 
 
     private enviarMenu enviarMenu;
+    private Usuario user;
+    private Realm realm;
+    private static final String keyFragment = "idUsuario";
+    private static final String fieldQuery = "id";
 
     // TODO: Customize parameters
     public static menuBottomSheet newInstance() {
         final menuBottomSheet fragment = new menuBottomSheet();
         final Bundle args = new Bundle();
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -43,15 +46,19 @@ public class menuBottomSheet extends BottomSheetDialogFragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-
-    }
-
-    @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         final NavigationView navigationView = view.findViewById(R.id.navigation);
+        realm = Realm.getDefaultInstance();
+        CircleImageView perfil = view.findViewById(R.id.perfilUsuarioBottom);
+        TextView nombreUsuario = view.findViewById(R.id.nombreUsurioBottom);
+        TextView correoUsuario = view.findViewById(R.id.correoUsurioBottom);
+        auxiliar aux = realm.where(auxiliar.class).equalTo(fieldQuery, 1).findFirst();
+        user = realm.where(Usuario.class).equalTo(keyFragment, aux.getIdUsuario()).findFirst();
+
+        nombreUsuario.setText(user.getNombreUsuario() + " " + user.getApellidoUsuario());
+        correoUsuario.setText(user.getCorreoUsuario());
+        Picasso.get().load(user.getFotoUsuario()).into(perfil);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

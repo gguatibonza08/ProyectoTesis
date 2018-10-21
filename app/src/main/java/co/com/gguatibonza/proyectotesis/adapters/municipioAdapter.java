@@ -14,21 +14,18 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-
 import co.com.gguatibonza.proyectotesis.R;
-import co.com.gguatibonza.proyectotesis.interfaces.enviarMenu;
 import co.com.gguatibonza.proyectotesis.model.municipio;
+import io.realm.RealmResults;
 
 public class municipioAdapter extends RecyclerView.Adapter<municipioAdapter.ViewHolder> implements View.OnClickListener {
 
     private Context context;
     private static int lastpostion = -1;
-    private ArrayList<municipio> listaMunicipios;
+    private RealmResults<municipio> listaMunicipios;
     private View.OnClickListener listener;
-    private enviarMenu enviar;
 
-    public municipioAdapter(Context context, ArrayList<municipio> listaMunicipios) {
+    public municipioAdapter(Context context, RealmResults listaMunicipios) {
         this.context = context;
         this.listaMunicipios = listaMunicipios;
     }
@@ -43,9 +40,9 @@ public class municipioAdapter extends RecyclerView.Adapter<municipioAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.nombreMunicipio.setText(listaMunicipios.get(i).getNombre());
-        viewHolder.descriptionMunicipio.setText(listaMunicipios.get(i).getDescripcionBasica());
-        Picasso.get().load(listaMunicipios.get(i).getFoto()).into(viewHolder.imagenMunicipio);
+        viewHolder.nombreMunicipio.setText(listaMunicipios.get(i).getNombreMunicipio());
+        viewHolder.descriptionMunicipio.setText(listaMunicipios.get(i).getDescripcionBasicaMunicipio());
+        Picasso.get().load(listaMunicipios.get(i).getFotoMunicipio()).into(viewHolder.imagenMunicipio);
         setAnimation(viewHolder.cardItem, i);
 
     }

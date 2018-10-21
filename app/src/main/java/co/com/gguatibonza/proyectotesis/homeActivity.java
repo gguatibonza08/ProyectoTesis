@@ -1,12 +1,11 @@
 package co.com.gguatibonza.proyectotesis;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.bottomappbar.BottomAppBar;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +17,8 @@ import co.com.gguatibonza.proyectotesis.fragments.municipioFragment;
 import co.com.gguatibonza.proyectotesis.fragments.perfilFragment;
 import co.com.gguatibonza.proyectotesis.fragments.rutaFragment;
 import co.com.gguatibonza.proyectotesis.interfaces.enviarMenu;
-import co.com.gguatibonza.proyectotesis.model.municipio;
+import co.com.gguatibonza.proyectotesis.model.auxiliar;
+import io.realm.Realm;
 
 public class homeActivity extends AppCompatActivity
         implements enviarMenu,
@@ -27,9 +27,8 @@ public class homeActivity extends AppCompatActivity
         perfilFragment.OnFragmentInteractionListener,
         contactarFragment.OnFragmentInteractionListener,
         evaluarFragment.OnFragmentInteractionListener,
-        acercaFragment.OnFragmentInteractionListener, municipioDetailFragment.OnFragmentInteractionListener {
+        acercaFragment.OnFragmentInteractionListener {
 
-    private FloatingActionButton fab;
     private BottomAppBar appBar;
     private municipioFragment municipioFragment;
     private rutaFragment rutaFragment;
@@ -37,7 +36,7 @@ public class homeActivity extends AppCompatActivity
     private contactarFragment contactarFragment;
     private evaluarFragment evaluarFragment;
     private acercaFragment acercaFragment;
-    private municipioDetailFragment municipioDetail;
+    private Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +57,13 @@ public class homeActivity extends AppCompatActivity
     }
 
     private void referenciar() {
+        realm = Realm.getDefaultInstance();
         municipioFragment = new municipioFragment();
         rutaFragment = new rutaFragment();
         perfilFragment = new perfilFragment();
         contactarFragment = new contactarFragment();
         evaluarFragment = new evaluarFragment();
         acercaFragment = new acercaFragment();
-        municipioDetail = new municipioDetailFragment();
     }
 
     @Override
@@ -84,7 +83,15 @@ public class homeActivity extends AppCompatActivity
                 transaction.replace(R.id.fragmentHome, perfilFragment).commit();
                 break;
             case R.id.closeBottom:
-                finish();
+                realm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
+                        realm.delete(auxiliar.class);
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                        finish();
+                    }
+                });
+
                 break;
 
 
@@ -120,15 +127,6 @@ public class homeActivity extends AppCompatActivity
 
     }
 
-    @Override
-    public void enviarMunicipio(municipio municipio) {
-       /* municipioDetail.recibirDatos(municipio);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_right);
-        transaction.replace(R.id.fragmentHome, municipioDetail).addToBackStack(null).commit();*/
-        Log.e("home", municipio.toString());
-
-    }
 
     @Override
     public void onFragmentInteraction(Uri uri) {

@@ -1,4 +1,4 @@
-package co.com.gguatibonza.proyectotesis;
+package co.com.gguatibonza.proyectotesis.app;
 
 import android.app.Application;
 

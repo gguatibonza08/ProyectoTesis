@@ -7,5 +7,4 @@ public interface enviarMenu {
 
     void enviarMenu(int i);
 
-    void enviarMunicipio(municipio municipio);
 }

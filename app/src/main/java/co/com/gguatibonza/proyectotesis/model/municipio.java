@@ -1,65 +1,96 @@
 package co.com.gguatibonza.proyectotesis.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class municipio extends RealmObject implements Serializable {
+
+public class municipio extends RealmObject {
 
     @PrimaryKey
-    private String nombre;
-    private String descripcionBasica;
-    private String descripcionCompleta;
-    private ArrayList<String> simbolos;
-    private String foto;
+    private int idMunicipio;
+    private String nombreMunicipio;
+    private double longitudMunicipio;
+    private double latitudMunicipio;
+    private String descripcionBasicaMunicipio;
+    private String descripcionLargaMunicipio;
+    private String idInstagram;
+    private String fotoMunicipio;
 
-    public municipio(String nombre, String descripcionBasica, String descripcionCompleta, ArrayList<String> simbolos, String foto) {
-        this.nombre = nombre;
-        this.descripcionBasica = descripcionBasica;
-        this.descripcionCompleta = descripcionCompleta;
-        this.simbolos = simbolos;
-        this.foto = foto;
+    public municipio() {
     }
 
-    public String getNombre() {
-        return nombre;
+    public municipio(int idMunicipio, String nombreMunicipio, double longitudMunicipio, double latitudMunicipio, String descripcionBasicaMunicipio, String descripcionLargaMunicipio, String idInstagram, String fotoMunicipio) {
+        this.idMunicipio = idMunicipio;
+        this.nombreMunicipio = nombreMunicipio;
+        this.longitudMunicipio = longitudMunicipio;
+        this.latitudMunicipio = latitudMunicipio;
+        this.descripcionBasicaMunicipio = descripcionBasicaMunicipio;
+        this.descripcionLargaMunicipio = descripcionLargaMunicipio;
+        this.idInstagram = idInstagram;
+        this.fotoMunicipio = fotoMunicipio;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public int getIdMunicipio() {
+        return idMunicipio;
     }
 
-    public String getDescripcionBasica() {
-        return descripcionBasica;
+    public void setIdMunicipio(int idMunicipio) {
+        this.idMunicipio = idMunicipio;
     }
 
-    public void setDescripcionBasica(String descripcionBasica) {
-        this.descripcionBasica = descripcionBasica;
+    public String getNombreMunicipio() {
+        return nombreMunicipio;
     }
 
-    public String getDescripcionCompleta() {
-        return descripcionCompleta;
+    public void setNombreMunicipio(String nombreMunicipio) {
+        this.nombreMunicipio = nombreMunicipio;
     }
 
-    public void setDescripcionCompleta(String descripcionCompleta) {
-        this.descripcionCompleta = descripcionCompleta;
+    public double getLongitudMunicipio() {
+        return longitudMunicipio;
     }
 
-    public ArrayList<String> getSimbolos() {
-        return simbolos;
+    public void setLongitudMunicipio(double longitudMunicipio) {
+        this.longitudMunicipio = longitudMunicipio;
     }
 
-    public void setSimbolos(ArrayList<String> simbolos) {
-        this.simbolos = simbolos;
+    public double getLatitudMunicipio() {
+        return latitudMunicipio;
     }
 
-    public String getFoto() {
-        return foto;
+    public void setLatitudMunicipio(double latitudMunicipio) {
+        this.latitudMunicipio = latitudMunicipio;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public String getDescripcionBasicaMunicipio() {
+        return descripcionBasicaMunicipio;
+    }
+
+    public void setDescripcionBasicaMunicipio(String descripcionBasicaMunicipio) {
+        this.descripcionBasicaMunicipio = descripcionBasicaMunicipio;
+    }
+
+    public String getDescripcionLargaMunicipio() {
+        return descripcionLargaMunicipio;
+    }
+
+    public void setDescripcionLargaMunicipio(String descripcionLargaMunicipio) {
+        this.descripcionLargaMunicipio = descripcionLargaMunicipio;
+    }
+
+    public String getIdInstagram() {
+        return idInstagram;
+    }
+
+    public void setIdInstagram(String idInstagram) {
+        this.idInstagram = idInstagram;
+    }
+
+    public String getFotoMunicipio() {
+        return fotoMunicipio;
+    }
+
+    public void setFotoMunicipio(String fotoMunicipio) {
+        this.fotoMunicipio = fotoMunicipio;
     }
 }
