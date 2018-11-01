@@ -1,12 +1,15 @@
 package co.com.gguatibonza.proyectotesis.fragments;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import co.com.gguatibonza.proyectotesis.R;
 
@@ -18,11 +21,13 @@ import co.com.gguatibonza.proyectotesis.R;
  * Use the {@link descripcionMunicipio#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class descripcionMunicipio extends Fragment {
+public class descripcionMunicipio extends android.support.v4.app.Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private ImageView bandera, escudo;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -65,7 +70,14 @@ public class descripcionMunicipio extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_descripcion_municipio, container, false);
+        View view = inflater.inflate(R.layout.fragment_descripcion_municipio, container, false);
+        bandera = view.findViewById(R.id.banderaDescripcion);
+        escudo = view.findViewById(R.id.escudoDescripcion);
+
+        Picasso.get().load("https://st2.depositphotos.com/1482106/12261/i/950/depositphotos_122617832-stock-photo-waving-flag-of-bucaramanga-colombia.jpg").into(bandera);
+        Picasso.get().load("http://www.bucaramanga.gov.co/el-mapa/wp-content/uploads/2016/10/escudo.png").into(escudo);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

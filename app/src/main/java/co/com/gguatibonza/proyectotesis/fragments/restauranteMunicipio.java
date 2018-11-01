@@ -5,7 +5,6 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,30 +12,27 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import co.com.gguatibonza.proyectotesis.R;
-import co.com.gguatibonza.proyectotesis.model.atractivo;
+import co.com.gguatibonza.proyectotesis.model.restaurante;
 
 
-public class atractivosMunicipio extends android.support.v4.app.Fragment {
+public class restauranteMunicipio extends android.support.v4.app.Fragment {
 
     private OnFragmentInteractionListener mListener;
-
-    private ArrayList<atractivo> atractivos;
+    private ArrayList<restaurante> restaurantes;
     private LinearLayout layout;
 
-    public atractivosMunicipio() {
-        // Required empty public constructor
+    public restauranteMunicipio() {
+
     }
 
-
-    public static atractivosMunicipio newInstance() {
-        atractivosMunicipio fragment = new atractivosMunicipio();
+    public static restauranteMunicipio newInstance() {
+        restauranteMunicipio fragment = new restauranteMunicipio();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -46,6 +42,7 @@ public class atractivosMunicipio extends android.support.v4.app.Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+
         }
     }
 
@@ -53,18 +50,18 @@ public class atractivosMunicipio extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_atractivos_municipio, container, false);
-        layout = view.findViewById(R.id.contenedorPrincipalAtractivo);
+        View view = inflater.inflate(R.layout.fragment_restaurante_municipio, container, false);
+        layout = view.findViewById(R.id.contenedorPrincipalRestaurante);
 
-        atractivos = new ArrayList<>();
-        atractivos.add(new atractivo("https://media-cdn.tripadvisor.com/media/photo-s/0e/15/6e/f5/las-piscinas.jpg", "Cañon del Chicamocha"));
-        atractivos.add(new atractivo("https://www.las2orillas.co/wp-content/uploads/2017/09/gachas-santander.jpg", "Las Gachas"));
-        atractivos.add(new atractivo("https://www.santanderalextremo.com/wp-content/uploads/2018/02/Zapatoca-Historia-naturaleza-y-Vino.jpg", "Zapatoca"));
-        atractivos.add(new atractivo("https://www.laopinion.com.co/sites/default/files/styles/640x370/public/2016/04/10/imagen/santur.jpg", "Paramo de Santurban"));
+        restaurantes = new ArrayList<>();
+        restaurantes.add(new restaurante("https://i.imgur.com/IDpGiKe.jpg", "Mosto", "Carrera 29 # 41-25", "3108111814"));
+        restaurantes.add(new restaurante("https://i.imgur.com/nMbuPfm.jpg", "Cabrón", "carrera 35 # 42-17", "302421259"));
+        restaurantes.add(new restaurante("https://i.imgur.com/jkJko6W.jpg", "Camachos", "Carrera 35 # 34-02", "3166419240"));
+        restaurantes.add(new restaurante("https://i.imgur.com/sCso0hK.jpg", "Casalins", "Carrera 41", "314541"));
 
         LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        cardParams.setMargins(10, 10, 10, 10);
+        cardParams.setMargins(10, 10, 10, 40);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
@@ -76,7 +73,7 @@ public class atractivosMunicipio extends android.support.v4.app.Fragment {
         Typeface face = Typeface.createFromAsset(getActivity().getAssets(),
                 "crimsontextbold.ttf");
 
-        for (final atractivo atractivo : atractivos) {
+        for (final restaurante restaurante : restaurantes) {
             CardView card = new CardView(getContext());
             card.setRadius(10);
             card.setLayoutParams(cardParams);
@@ -88,23 +85,33 @@ public class atractivosMunicipio extends android.support.v4.app.Fragment {
             ImageView imagen = new ImageView(getContext());
             imagen.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imagen.setLayoutParams(imageParams);
-            Picasso.get().load(atractivo.getUrl()).into(imagen);
-            TextView texto = new TextView(getContext());
-            texto.setLayoutParams(textoParams);
-            texto.setText(atractivo.getNombre());
-            texto.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            texto.setTextSize(25);
-            texto.setTypeface(face);
-            texto.setTextColor(getResources().getColor(R.color.dark));
+            Picasso.get().load(restaurante.getUrl()).into(imagen);
+            TextView nombre = new TextView(getContext());
+            nombre.setLayoutParams(textoParams);
+            nombre.setText(restaurante.getNombre());
+            nombre.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            nombre.setTextSize(25);
+            nombre.setTypeface(face);
+            nombre.setTextColor(getResources().getColor(R.color.dark));
+            textoParams.setMargins(50, 0, 20, 0);
+            TextView direccion = new TextView(getContext());
+            direccion.setLayoutParams(textoParams);
+            direccion.setText(restaurante.getDireccion());
+            direccion.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+            direccion.setTextSize(18);
+            direccion.setTextColor(getResources().getColor(R.color.dark));
+            TextView telefono = new TextView(getContext());
+
+            telefono.setLayoutParams(textoParams);
+            telefono.setText(restaurante.getTelefono());
+            telefono.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+            telefono.setTextSize(18);
+            telefono.setTextColor(getResources().getColor(R.color.dark));
             aux.addView(imagen);
-            aux.addView(texto);
+            aux.addView(nombre);
+            aux.addView(direccion);
+            aux.addView(telefono);
             card.addView(aux);
-            card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getContext(), "prueba" + atractivo.getNombre(), Toast.LENGTH_SHORT).show();
-                }
-            });
             layout.addView(card);
 
 
@@ -114,7 +121,7 @@ public class atractivosMunicipio extends android.support.v4.app.Fragment {
         return view;
     }
 
-
+    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -137,7 +144,6 @@ public class atractivosMunicipio extends android.support.v4.app.Fragment {
         super.onDetach();
         mListener = null;
     }
-
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name

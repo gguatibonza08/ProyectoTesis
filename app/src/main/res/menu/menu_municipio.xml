@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuDescripcion"
+        android:icon="@drawable/description"
+        android:title="Descripción" />
+    <item
+        android:id="@+id/menuAtractivo"
+        android:icon="@drawable/atractivo"
+        android:title="Atractivos" />
+    <item
+        android:id="@+id/menuRestaurante"
+        android:icon="@drawable/restaurant"
+        android:title="Restaurantes" />
+
+    <item
+        android:id="@+id/menuHospedaje"
+        android:icon="@drawable/hotel"
+        android:title="Hospedaje" />
+</menu>

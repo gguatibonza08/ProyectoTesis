@@ -19,11 +19,40 @@
             app:expandedTitleTextAppearance="@android:color/transparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/gachas" />
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/nextImagen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:elevation="4dp"
+                    android:src="@drawable/next" />
+
+
+                <ImageView
+                    android:id="@+id/beforeImagen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:elevation="4dp"
+                    android:src="@drawable/before" />
+
+
+                <ImageView
+                    android:id="@+id/imagenMunicipioDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/gachas" />
+
+            </RelativeLayout>
+
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -38,6 +67,13 @@
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigationDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/yellowDark"
+            app:menu="@menu/menu_municipio" />
+
 
     </android.support.design.widget.AppBarLayout>
 
@@ -47,6 +83,13 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <FrameLayout
+            android:id="@+id/fragmentDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="4dp"></FrameLayout>
 
 
     </android.support.v4.widget.NestedScrollView>

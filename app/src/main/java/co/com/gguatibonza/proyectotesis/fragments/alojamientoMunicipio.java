@@ -5,7 +5,6 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,20 +22,19 @@ import co.com.gguatibonza.proyectotesis.R;
 import co.com.gguatibonza.proyectotesis.model.atractivo;
 
 
-public class atractivosMunicipio extends android.support.v4.app.Fragment {
+public class alojamientoMunicipio extends android.support.v4.app.Fragment {
 
+
+    private ArrayList<atractivo> alojamientos;
+    private LinearLayout layout;
     private OnFragmentInteractionListener mListener;
 
-    private ArrayList<atractivo> atractivos;
-    private LinearLayout layout;
-
-    public atractivosMunicipio() {
+    public alojamientoMunicipio() {
         // Required empty public constructor
     }
 
-
-    public static atractivosMunicipio newInstance() {
-        atractivosMunicipio fragment = new atractivosMunicipio();
+    public static alojamientoMunicipio newInstance(String param1, String param2) {
+        alojamientoMunicipio fragment = new alojamientoMunicipio();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -46,21 +44,22 @@ public class atractivosMunicipio extends android.support.v4.app.Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
+
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_atractivos_municipio, container, false);
-        layout = view.findViewById(R.id.contenedorPrincipalAtractivo);
+        View view = inflater.inflate(R.layout.fragment_alojamiento_municipio, container, false);
 
-        atractivos = new ArrayList<>();
-        atractivos.add(new atractivo("https://media-cdn.tripadvisor.com/media/photo-s/0e/15/6e/f5/las-piscinas.jpg", "Cañon del Chicamocha"));
-        atractivos.add(new atractivo("https://www.las2orillas.co/wp-content/uploads/2017/09/gachas-santander.jpg", "Las Gachas"));
-        atractivos.add(new atractivo("https://www.santanderalextremo.com/wp-content/uploads/2018/02/Zapatoca-Historia-naturaleza-y-Vino.jpg", "Zapatoca"));
-        atractivos.add(new atractivo("https://www.laopinion.com.co/sites/default/files/styles/640x370/public/2016/04/10/imagen/santur.jpg", "Paramo de Santurban"));
+        layout = view.findViewById(R.id.contenedorPrincipalAlojamiento);
+
+        alojamientos = new ArrayList<>();
+        alojamientos.add(new atractivo("https://media-cdn.tripadvisor.com/media/photo-s/0e/15/6e/f5/las-piscinas.jpg", "Cañon del Chicamocha"));
+        alojamientos.add(new atractivo("https://www.las2orillas.co/wp-content/uploads/2017/09/gachas-santander.jpg", "Las Gachas"));
+        alojamientos.add(new atractivo("https://www.santanderalextremo.com/wp-content/uploads/2018/02/Zapatoca-Historia-naturaleza-y-Vino.jpg", "Zapatoca"));
+        alojamientos.add(new atractivo("https://www.laopinion.com.co/sites/default/files/styles/640x370/public/2016/04/10/imagen/santur.jpg", "Paramo de Santurban"));
 
         LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -76,7 +75,7 @@ public class atractivosMunicipio extends android.support.v4.app.Fragment {
         Typeface face = Typeface.createFromAsset(getActivity().getAssets(),
                 "crimsontextbold.ttf");
 
-        for (final atractivo atractivo : atractivos) {
+        for (final atractivo atractivo : alojamientos) {
             CardView card = new CardView(getContext());
             card.setRadius(10);
             card.setLayoutParams(cardParams);
@@ -114,7 +113,7 @@ public class atractivosMunicipio extends android.support.v4.app.Fragment {
         return view;
     }
 
-
+    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);

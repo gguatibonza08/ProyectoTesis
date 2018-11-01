@@ -4,9 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".restauranteMunicipio">
+    tools:context=".fragments.restauranteMunicipio">
 
-
+    <LinearLayout
+        android:id="@+id/contenedorPrincipalRestaurante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:padding="3dp"></LinearLayout>
 
 
 </LinearLayout>
