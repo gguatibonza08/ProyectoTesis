@@ -72,6 +72,8 @@ public class restauranteMunicipio extends android.support.v4.app.Fragment {
 
         Typeface face = Typeface.createFromAsset(getActivity().getAssets(),
                 "crimsontextbold.ttf");
+        Typeface face2 = Typeface.createFromAsset(getActivity().getAssets(),
+                "worksansmedium.ttf");
 
         for (final restaurante restaurante : restaurantes) {
             CardView card = new CardView(getContext());
@@ -98,14 +100,16 @@ public class restauranteMunicipio extends android.support.v4.app.Fragment {
             direccion.setLayoutParams(textoParams);
             direccion.setText(restaurante.getDireccion());
             direccion.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
-            direccion.setTextSize(18);
+            direccion.setTextSize(16);
+            direccion.setTypeface(face2);
             direccion.setTextColor(getResources().getColor(R.color.dark));
             TextView telefono = new TextView(getContext());
 
             telefono.setLayoutParams(textoParams);
             telefono.setText(restaurante.getTelefono());
             telefono.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
-            telefono.setTextSize(18);
+            telefono.setTextSize(16);
+            telefono.setTypeface(face2);
             telefono.setTextColor(getResources().getColor(R.color.dark));
             aux.addView(imagen);
             aux.addView(nombre);

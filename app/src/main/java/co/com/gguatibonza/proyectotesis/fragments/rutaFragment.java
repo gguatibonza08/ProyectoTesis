@@ -3,22 +3,32 @@ package co.com.gguatibonza.proyectotesis.fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import co.com.gguatibonza.proyectotesis.R;
+import co.com.gguatibonza.proyectotesis.adapters.rutaAdapter;
+import co.com.gguatibonza.proyectotesis.model.ruta;
 
 public class rutaFragment extends android.support.v4.app.Fragment {
 
     private OnFragmentInteractionListener mListener;
+    RecyclerView listRutas;
+    ArrayList<ruta> rutas;
 
     public rutaFragment() {
         // Required empty public constructor
     }
 
 
-    public static rutaFragment newInstance(String param1, String param2) {
+    public static rutaFragment newInstance() {
         rutaFragment fragment = new rutaFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -35,9 +45,30 @@ public class rutaFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ruta, container, false);
+        View v = inflater.inflate(R.layout.fragment_ruta, container, false);
+        rutas = new ArrayList<>();
+        rutas.add(new ruta("num1", "https://cdn-images-1.medium.com/max/1600/1*b1cBcGGOy1djw8kbBkWOng.jpeg", "uafs ahsfas fihasvf asihfvsai fisagfv asifas y8f00"));
+        rutas.add(new ruta("num1", "https://cdn-images-1.medium.com/max/1600/1*b1cBcGGOy1djw8kbBkWOng.jpeg", "uafs ahsfas fihasvf asihfvsai fisagfv asifas y8f00"));
+        rutas.add(new ruta("num1", "https://cdn-images-1.medium.com/max/1600/1*b1cBcGGOy1djw8kbBkWOng.jpeg", "uafs ahsfas fihasvf asihfvsai fisagfv asifas y8f00"));
+        rutas.add(new ruta("num1", "https://cdn-images-1.medium.com/max/1600/1*b1cBcGGOy1djw8kbBkWOng.jpeg", "uafs ahsfas fihasvf asihfvsai fisagfv asifas y8f00"));
+        rutas.add(new ruta("num1", "https://cdn-images-1.medium.com/max/1600/1*b1cBcGGOy1djw8kbBkWOng.jpeg", "uafs ahsfas fihasvf asihfvsai fisagfv asifas y8f00"));
+
+        listRutas = v.findViewById(R.id.listRutas);
+        rutaAdapter Adapter = new rutaAdapter(getContext(), rutas);
+        listRutas.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        listRutas.setItemAnimator(new DefaultItemAnimator());
+
+        Adapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "sadaf", Toast.LENGTH_SHORT).show();
+            }
+        });
+        listRutas.setAdapter(Adapter);
+
+        return v;
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

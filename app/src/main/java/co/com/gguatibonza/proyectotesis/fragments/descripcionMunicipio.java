@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
+import co.com.gguatibonza.proyectotesis.MapsActivity;
 import co.com.gguatibonza.proyectotesis.R;
 
 /**
@@ -73,7 +74,6 @@ public class descripcionMunicipio extends android.support.v4.app.Fragment {
         View view = inflater.inflate(R.layout.fragment_descripcion_municipio, container, false);
         bandera = view.findViewById(R.id.banderaDescripcion);
         escudo = view.findViewById(R.id.escudoDescripcion);
-
         Picasso.get().load("https://st2.depositphotos.com/1482106/12261/i/950/depositphotos_122617832-stock-photo-waving-flag-of-bucaramanga-colombia.jpg").into(bandera);
         Picasso.get().load("http://www.bucaramanga.gov.co/el-mapa/wp-content/uploads/2016/10/escudo.png").into(escudo);
 
