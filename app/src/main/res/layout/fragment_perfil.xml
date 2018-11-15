@@ -4,100 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="5dp"
+    android:padding="4dp"
     tools:context=".fragments.perfilFragment">
 
-    <ScrollView
-
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="2dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:cardCornerRadius="7dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imagenPortadaPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/panachi" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imagenAvatarPerfil"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_below="@+id/imagenPortadaPerfil"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-60dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/tourist2" />
+
+            <TextView
+                android:id="@+id/perfilNombreUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imagenAvatarPerfil"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/crimsontextbold"
+                android:text="Gian Guatibonza"
+                android:textColor="@color/dark"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/perfilApodoUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/perfilNombreUsuario"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
+
+                android:fontFamily="@font/crimsontextbold"
+                android:text="gguatibonza08@gmail.com"
+                android:textColor="@color/divider"
+                android:textSize="17dp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        app:cardCornerRadius="7dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
             android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tituloLogros"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="7dp"
-                android:layout_marginVertical="2dp">
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/crimsontextbold"
+                android:text="Mis Logros."
+                android:textColor="@color/dark"
+                android:textSize="30sp" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imagenPortadaPerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="173dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/panachi" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/imagenAvatarPerfil"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_below="@+id/imagenPortadaPerfil"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="-75dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/tourist2" />
-
-                    <TextView
-                        android:id="@+id/perfilNombreUsuario"
-                        android:layout_width="324dp"
-                        android:layout_height="47dp"
-                        android:layout_below="@+id/imagenAvatarPerfil"
-                        android:layout_marginHorizontal="10dp"
-                        android:fontFamily="@font/crimsontextbold"
-                        android:text="Hola"
-                        android:textAlignment="center"
-                        android:textColor="@color/dark"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:id="@+id/perfilApodoUsuario"
-                        android:layout_width="324dp"
-                        android:layout_height="47dp"
-                        android:layout_below="@+id/perfilNombreUsuario"
-                        android:layout_marginHorizontal="10dp"
-                        android:fontFamily="@font/crimsontextbold"
-                        android:text="Apodo"
-                        android:textAlignment="center"
-                        android:textColor="@color/dark"
-                        android:textSize="20dp" />
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
-
-
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/listaLogros"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:listitem="@layout/logro_item" />
-            <Button
-                android:id="@+id/botonGaleria"
-                style="@style/TextAppearance.MaterialComponents.Button"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listaLogros"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_gravity="bottom"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:fontFamily="sans-serif"
-                android:text="Mi galeria"
-                android:textColor="@color/ligth"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:layout_below="@id/tituloLogros"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="-10dp"
+                android:scrollbars="horizontal"
+                tools:listitem="@layout/logro_item" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 
 
-    </ScrollView>
+    <Button
+        android:id="@+id/botonGaleria"
+        style="@style/TextAppearance.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="10dp"
 
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif"
+        android:text="Mi galeria"
+        android:textColor="@color/ligth"
+        android:textStyle="bold" />
 </LinearLayout>

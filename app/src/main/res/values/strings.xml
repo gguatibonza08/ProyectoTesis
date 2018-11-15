@@ -23,5 +23,8 @@
     <string name="descripcionMunicipio">capital del departamento de Santander. Declarada según el Banco Mundial en su estudio de ciudades competitivas para estudios y crecimientos como la ciudad más próspera de América Latina y ejemplo para el mundo.</string>
     <string name="municipioNameItem">Bucaramanga</string>
     <string name="title_activity_maps">Map</string>
+    <string name="una">Capital del departamento de Santander, también llamada la ciudad de los parques o la ciudad Bonita, cuenta con alrededor de 521.857 habitantes, está enmarcada por la cordillera oriental de los andes y tiene un clima tropical promedio de 23°C. Cuenta con diversa cantidad de parques y espacios culturales como el parque San Pio, parque de las palmas, museo Francisco de Paula Santander, entre otros.</string>
+    <string name="dos"> Conocida como “La ciudad del clima de seda” o “la ciudad levítica” se encuentra ubicada al sur occidente de la capital del departamento en la provincia Mares. Este hermoso municipio fue fundado el 13 de octubre de 1743 y cuenta con alrededor de 8800 habitantes.</string>
+    <string name="tres">Zapatoca es uno de los municipios del departamento de Santander que cuenta con una gran diversidad natural. Su temperatura promedio es de 20°C los que lo hace un excelente clima para conocer su diversidad tanto natural como cultural entre los que se destacan lugares como: la cueva del Nitro, mirador los Guanes y la casa del quijote, entre otros. Zapatoca fue en su mayoría poblada por indígenas colombianos y su nombre proviene de esa lengua.</string>
 
 </resources>

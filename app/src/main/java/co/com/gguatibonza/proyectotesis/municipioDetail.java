@@ -2,13 +2,13 @@ package co.com.gguatibonza.proyectotesis;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -24,14 +24,12 @@ import co.com.gguatibonza.proyectotesis.model.municipio;
 import io.realm.Realm;
 
 
-public class municipioDetail extends AppCompatActivity implements descripcionMunicipio.OnFragmentInteractionListener, View.OnClickListener, alojamientoMunicipio.OnFragmentInteractionListener, restauranteMunicipio.OnFragmentInteractionListener, atractivosMunicipio.OnFragmentInteractionListener {
-    private Toolbar toolbar;
+public class municipioDetail extends AppCompatActivity implements descripcionMunicipio.OnFragmentInteractionListener, alojamientoMunicipio.OnFragmentInteractionListener, restauranteMunicipio.OnFragmentInteractionListener, atractivosMunicipio.OnFragmentInteractionListener {
     private static final String keyMunicipio = "idMunicipio";
     private Realm realm;
     private auxiliar aux;
     private municipio lugar;
     private ImageView municipioImagen;
-    private ImageView next, before;
     private static int posicion = 0;
 
 
@@ -46,8 +44,11 @@ public class municipioDetail extends AppCompatActivity implements descripcionMun
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_municipio_detail);
+
         realm = Realm.getDefaultInstance();
         referenciar();
+        temp();
+
         getSupportFragmentManager().beginTransaction().add(R.id.fragmentDetail, descripcionMunicipio).commit();
         BottomNavigationView navigation = findViewById(R.id.navigationDetail);
         navigation.setItemHorizontalTranslationEnabled(true);
@@ -76,16 +77,10 @@ public class municipioDetail extends AppCompatActivity implements descripcionMun
         });
         aux = realm.where(auxiliar.class).equalTo("id", 1).findFirst();
         lugar = realm.where(municipio.class).equalTo(keyMunicipio, aux.getIdMunicipio()).findFirst();
-        toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(lugar.getNombreMunicipio());
         Picasso.get().load(lugar.getFotoMunicipio()).into(municipioImagen);
     }
 
     private void referenciar() {
-        next = findViewById(R.id.nextImagen);
-        before = findViewById(R.id.beforeImagen);
-        next.setOnClickListener(this);
-        before.setOnClickListener(this);
         urls.add("http://cr00.epimg.net/emisora/imagenes/2017/08/18/bucaramanga/1503060677_259401_1503060877_noticia_normal.jpg");
         urls.add("http://www.ideasworldcup.com/wp-content/uploads/2016/04/bucaramanga.jpg");
         urls.add("https://www.fenixconstrucciones.com/wp-content/uploads/2017/03/shantik-casa-boutique-2017.jpg");
@@ -97,29 +92,26 @@ public class municipioDetail extends AppCompatActivity implements descripcionMun
         atractivosMunicipio = new atractivosMunicipio();
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
+    public void temp() {
+        new CountDownTimer(((1000 * urls.size()) * 4), 4000) {
 
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.nextImagen:
+            public void onTick(long millisUntilFinished) {
                 Picasso.get().load(urls.get(posicion)).into(municipioImagen);
                 posicion++;
                 if (posicion == (urls.size())) {
                     posicion = 0;
                 }
-                break;
-            case R.id.beforeImagen:
-                Picasso.get().load(urls.get(posicion)).into(municipioImagen);
-                posicion--;
-                if (posicion <= 0) {
-                    posicion = urls.size() - 1;
-                }
-                break;
-        }
+            }
+
+            public void onFinish() {
+                temp();
+            }
+        }.start();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
+
 }

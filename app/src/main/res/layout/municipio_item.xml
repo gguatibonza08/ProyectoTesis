@@ -48,9 +48,10 @@
             <TextView
                 android:id="@+id/descripcionMunicipioItem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="250dp"
                 android:layout_marginHorizontal="4dp"
                 android:fontFamily="@font/worksansmedium"
+                android:gravity="top|center"
                 android:justificationMode="inter_word"
                 android:text="@string/descripcionMunicipio"
                 android:textColor="@color/textDescripctio" />

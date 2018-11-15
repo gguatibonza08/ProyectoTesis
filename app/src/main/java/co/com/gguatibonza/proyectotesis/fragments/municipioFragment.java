@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import co.com.gguatibonza.proyectotesis.R;
 import co.com.gguatibonza.proyectotesis.adapters.municipioAdapter;
+import co.com.gguatibonza.proyectotesis.model.atractivo;
 import co.com.gguatibonza.proyectotesis.model.auxiliar;
 import co.com.gguatibonza.proyectotesis.model.municipio;
 import co.com.gguatibonza.proyectotesis.municipioDetail;
@@ -26,6 +28,7 @@ public class municipioFragment extends android.support.v4.app.Fragment {
     private OnFragmentInteractionListener mListener;
     private RecyclerView listMunicipios;
     private RealmResults<municipio> nombres;
+    private RealmResults<atractivo> atractivos;
     private Realm realm;
     private auxiliar aux;
     private static final String keyMunicipio = "municipio";

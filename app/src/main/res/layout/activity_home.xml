@@ -9,7 +9,7 @@
     <FrameLayout
         android:id="@+id/fragmentHome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"></FrameLayout>
 
     <android.support.design.bottomappbar.BottomAppBar
         android:id="@+id/ApBarHome"
@@ -25,10 +25,11 @@
         app:navigationIcon="@drawable/ic_menu_black_24dp" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/camara"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:fabSize="normal"
-        app:layout_anchor="@id/ApBarHome" />
+        app:layout_anchor="@id/ApBarHome"
+        app:srcCompat="@drawable/camera" />
 
 </android.support.design.widget.CoordinatorLayout>

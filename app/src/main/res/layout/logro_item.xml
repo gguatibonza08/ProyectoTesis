@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardLogroItem"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="5dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="2dp"
+        android:backgroundTint="@color/colorAccent"
+        app:cardCornerRadius="5dp"
+        app:contentPadding="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,17 +23,21 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imagenLogroItem"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/gachas" />
 
             <TextView
                 android:id="@+id/nombreLogroItem"
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/crimsontextbold"
                 android:text="El buscador"
                 android:textAlignment="center"
-                android:textSize="24dp" />
+                android:textColor="@color/dark"
+                android:textSize="16dp" />
 
         </LinearLayout>
 

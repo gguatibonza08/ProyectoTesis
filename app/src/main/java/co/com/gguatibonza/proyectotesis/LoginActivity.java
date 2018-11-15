@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 person.setApodoUsuario("gguatibonza");
                 person.setContrasenaUsuario("1234");
                 person.setCorreoUsuario("gguatibonza08@gmail.com");
-                person.setFotoUsuario("https//:i.imgur.com/EYadhi1.png");
+                person.setFotoUsuario("https://i.imgur.com/5sbjpMT.png");
                 person.setTelefonoUsuario("3174146021");
                 realm.insertOrUpdate(person);
 
@@ -82,12 +82,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void ayuda() {
-        final municipio mun1 = new municipio(1, "Bucaramanga", 10, 10, getString(R.string.descripcionMunicipio), getString(R.string.descripcionMunicipio), "1", "https://files.rcnradio.com/public/migration/212.jpg");
-        final municipio mun2 = new municipio(2, "El Playón", 10, 10, getString(R.string.descripcionMunicipio), getString(R.string.descripcionMunicipio), "2", "https://files.rcnradio.com/public/migration/playon.jpg");
+        final municipio mun1 = new municipio(1, "Bucaramanga", -73.1198, 7.11392, getString(R.string.descripcionMunicipio), getString(R.string.una), "1", "https://files.rcnradio.com/public/migration/212.jpg");
+        final municipio mun2 = new municipio(2, "Zapatoca", -73.2812918, 6.8138824, getString(R.string.dos), getString(R.string.tres), "2", "https://www.santanderalextremo.com/wp-content/uploads/2018/02/Zapatoca-Historia-naturaleza-y-Vino.jpg");
         final municipio mun3 = new municipio(3, "Veléz", 10, 10, getString(R.string.descripcionMunicipio), getString(R.string.descripcionMunicipio), "3", "https://i.ytimg.com/vi/Q1VLPaEDcUs/maxresdefault.jpg");
         final municipio mun4 = new municipio(4, "Barichara", 10, 10, getString(R.string.descripcionMunicipio), getString(R.string.descripcionMunicipio), "4", "https://photo980x880.mnstatic.com/b1c6dee81de57c3058243eb226cfc9ab/barichara_572610.jpg");
         final municipio mun5 = new municipio(5, "Guane", 10, 10, getString(R.string.descripcionMunicipio), getString(R.string.descripcionMunicipio), "5", "https://i.ytimg.com/vi/Hfbg2GQElRQ/maxresdefault.jpg");
         final municipio mun6 = new municipio(6, "Chárala", 10, 10, getString(R.string.descripcionMunicipio), getString(R.string.descripcionMunicipio), "6", "https://www.fotopaises.com/Fotos-Paises/t/2006/4/21/359_1145756033.jpg");
+
 
         realm.executeTransaction(new Realm.Transaction() {
             @Override

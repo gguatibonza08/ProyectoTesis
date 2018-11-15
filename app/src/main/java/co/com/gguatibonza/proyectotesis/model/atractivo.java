@@ -1,16 +1,21 @@
 package co.com.gguatibonza.proyectotesis.model;
 
 public class atractivo {
+
     private String url;
     private String nombre;
+
 
     public atractivo() {
     }
 
     public atractivo(String url, String nombre) {
+
         this.url = url;
         this.nombre = nombre;
+
     }
+
 
     public String getUrl() {
         return url;
@@ -27,4 +32,5 @@ public class atractivo {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
 }
